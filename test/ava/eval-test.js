@@ -8,42 +8,43 @@ import foo from '../fixtures/foo'
 assert.equal(foo('bar'), 'foo:bar')
 
 test('evalInContext: function', t => {
-  t.is(evalInContext(
-    {
+  t.is(
+    evalInContext({
       js: 'foo("bar")',
       context: {foo}
-    }
-  ), 'foo:bar')
+    }),
+    'foo:bar'
+  )
 })
 
 test('evalInContext: object', t => {
-  t.deepEqual(evalInContext(
-    {
+  t.deepEqual(
+    evalInContext({
       js: '{foo: foo("bar")}',
       context: {foo}
-    }
-  ),
-  {foo: 'foo:bar'})
+    }),
+    {foo: 'foo:bar'}
+  )
 })
 
 test('evalInContext: array', t => {
-  t.deepEqual(evalInContext(
-    {
+  t.deepEqual(
+    evalInContext({
       js: '[foo("bar")]',
       context: {foo}
-    }
-  ),
-  ['foo:bar'])
+    }),
+    ['foo:bar']
+  )
 })
 
 test('evalInContext: string-template', t => {
-  t.is(evalInContext(
-    {
+  t.is(
+    evalInContext({
       js: '`#${foo("bar")}`',
       context: {foo}
-    }
-  ),
-  '#foo:bar')
+    }),
+    '#foo:bar'
+  )
 })
 
 test('asTemplate', t => {
@@ -52,10 +53,10 @@ test('asTemplate', t => {
 
 test('evalInContext: asTemplate', t => {
   const foo = asTemplate('bar')
-  t.is(evalInContext(
-    {
+  t.is(
+    evalInContext({
       js: foo
-    }
-  ),
-  'bar')
+    }),
+    'bar'
+  )
 })

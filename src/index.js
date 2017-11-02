@@ -17,28 +17,29 @@ export function evalInContext({js, context}) {
 
 export async function chill({millis = 0, resolution, rejection = 'doh!'}) {
   dbg('chill: millis=%o, resolution=%o, rejection=%o', millis, resolution, rejection)
-  const promise = new Promise(
-    (resolve, reject) => {
-      setTimeout(
-        () => {
-          dbg('chill: chilled for [%o] ms...', millis)
-          if (resolution) {
-            resolve(resolution)
-          } else {
-            reject(rejection)
-          }
-        },
-        millis
-      )
-    }
-  )
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      dbg('chill: chilled for [%o] ms...', millis)
+      if (resolution) {
+        resolve(resolution)
+      } else {
+        reject(rejection)
+      }
+    }, millis)
+  })
   return promise
 }
 
 export function getUrl(path, {context, port} = {}) {
   assert(path, 'path required')
-  assert(port, 'port required')
-  return `http://localhost:${port}${evalInContext({js: asTemplate(path), context})}`
+  let _path
+  if (path.startsWith('http')) {
+    _path = path
+  } else {
+    assert(port, 'port required')
+    _path = `http://localhost:${port}${path}`
+  }
+  return evalInContext({js: asTemplate(_path), context})
 }
 
 export function requireUncached(module) {

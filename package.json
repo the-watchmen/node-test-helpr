@@ -1,11 +1,11 @@
 {
-  "name": "test-helpr",
+  "name": "@watchmen/test-helpr",
   "version": "0.3.2",
   "description": "",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tony-kerz/node-test-helpr.git"
+    "url": "https://github.com/the-watchmen/node-test-helpr.git"
   },
   "scripts": {
     "ava": "cross-env DEBUG=test:*,app:* ava",
@@ -17,32 +17,31 @@
   "author": "tony kerz",
   "license": "ISC",
   "dependencies": {
-    "debug": "^2.6.1",
+    "debug": "^3.1.0",
     "fast-safe-stringify": "^1.1.6",
     "jsondiffpatch": "^0.2.4",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "ava": "^0.18.2",
+    "ava": "^0.23.0",
     "babel-cli": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.1.9",
     "config": "^1.25.1",
-    "cross-env": "^3.1.4",
-    "xo": "^0.17.1"
+    "cross-env": "^5.1.1",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "prettier": "^1.7.4",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "useEslintrc": true
   },
   "ava": {
     "babel": "inherit",
-    "require": [
-      "babel-register",
-      "babel-polyfill"
-    ]
+    "require": ["babel-register", "babel-polyfill"]
   },
-  "xo": {
-    "space": true,
-    "semicolon": false,
-    "rules": {
-      "no-console": "error"
-    }
+  "publishConfig": {
+    "access": "public"
   }
 }
