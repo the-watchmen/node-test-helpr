@@ -1,6 +1,6 @@
 {
   "name": "@watchmen/test-helpr",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "",
   "main": "dist/index.js",
   "repository": {
@@ -39,7 +39,10 @@
   },
   "ava": {
     "babel": "inherit",
-    "require": ["babel-register", "babel-polyfill"]
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ]
   },
   "publishConfig": {
     "access": "public"
