@@ -1,5 +1,11 @@
-module.exports = {
-  listener: {
-    port: 'PORT'
-  }
+export default {
+	listener: {
+		port: 'PORT',
+	},
 }
+
+// Module.exports = {
+// 	listener: {
+// 		port: 'PORT',
+// 	},
+// }
