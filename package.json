@@ -1,35 +1,31 @@
 {
   "name": "@watchmen/test-helpr",
   "version": "1.0.2",
-  "description": "",
-  "main": "src/index.js",
+  "description": "misc test helpers",
+  "type": "module",
+  "exports": "./src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/the-watchmen/node-test-helpr.git"
+    "url": "git+https://github.com/the-watchmen/node-test-helpr.git"
   },
   "scripts": {
-    "ava": "export DEBUG=test:*,app:* ava",
     "pretest": "xo",
-    "test": "npm run ava",
-    "prebuild": "npm run test"
+    "test": "ava"
   },
   "author": "tony kerz",
   "license": "ISC",
   "dependencies": {
-    "debug": "^4.3.4",
+    "debug": "^4.4.0",
     "fast-safe-stringify": "^2.1.1",
-    "jsondiffpatch": "^0.4.1",
+    "jsondiffpatch": "^0.6.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "ava": "^4.3.3",
-    "config": "^3.3.8",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1",
-    "xo": "^0.52.3"
-  },
-  "publishConfig": {
-    "access": "public"
+    "ava": "^6.2.0",
+    "config": "^3.3.12",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.4.2",
+    "xo": "^0.60.0"
   }
 }

@@ -1,7 +1,7 @@
 export default {
-	listener: {
-		port: 'PORT',
-	},
+  listener: {
+    port: 'PORT',
+  },
 }
 
 // Module.exports = {

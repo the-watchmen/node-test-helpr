@@ -1,7 +1,7 @@
 export default {
-	listener: {
-		port: 3000,
-	},
+  listener: {
+    port: 3000,
+  },
 }
 
 // Module.exports = {
