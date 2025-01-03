@@ -1,6 +1,6 @@
 {
   "name": "@watchmen/test-helpr",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "misc test helpers",
   "type": "module",
   "exports": "./src/index.js",
